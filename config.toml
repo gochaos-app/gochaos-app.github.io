@@ -1,4 +1,4 @@
-baseURL = "https://gochaos-app.github.io/"
+baseURL = "https://gochaos-app.github.io"
 theme="hugo-theme-learn"
 languageCode = "en-us"
 title = "Go-Chaos"
