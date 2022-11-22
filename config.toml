@@ -1,0 +1,19 @@
+baseURL = "http://example.org/"
+theme="hugo-theme-learn"
+languageCode = "en-us"
+title = "My New Hugo Site"
+
+[params]
+themeVariant = "green"
+showVisitedLinks = true
+
+[outputs]
+home = ["HTML","RSS","JSON"]
+
+[Clear-History]
+other = "Clear History"
+
+[deployment]
+  [[deployment.targets]]
+    name = "default"
+    URL = "s3://chaosctl.ramonesparza.net?region=us-east-1"

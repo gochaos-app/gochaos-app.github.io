@@ -1,0 +1,49 @@
+---
+date: 2016-04-09T16:50:16+02:00
+title: CLI
+pre: "<b>3. </b>"
+weight: 30
+---
+
+go-chaos is a terminal app, so you will need to have basic knowledge on Linux or BSD. 
+
+```bash
+NAME:
+   go-chaos - A terminal based app that injects chaos into your cloud infrastrucure
+
+USAGE:
+   go-chaos command [command options]
+
+COMMANDS:
+   destroy, d   Execute destroy with custom file name
+   validate, v  Validate chaos file
+   target, t    Execute chaos on a single target
+   server, s    Start go-chaos server
+   help, h      Shows a list of commands or help for one command
+
+```
+
+Basic commands are:
+ * ***validate, v***: reads a file and checks if the file is readeable. Finds issues such as missing values for parameters. 
+ ```bash
+go-chaos validate myExperiment.hcl 
+```
+ * ***destroy, d***: reads a file, validates it and starts to executing chaos job operations, and a script if it is present.
+ {{% notice warning %}}
+ The actions behind this command are irreversible, please use with caution
+{{% /notice %}}
+```bash
+go-chaos destroy myExperiment.hcl 
+```
+* ***target, t***: reads a file and executes a target job inside this file, eg, 
+{{% notice warning %}}
+ The actions behind this command are irreversible, please use with caution
+{{% /notice %}}
+```bash
+ go-chaos target myExperiment.hcl aws.ec2.app1:prod
+```
+
+* ***server, s***: reads a server configuration toml file, start a server and can execute chaos experiments from a remote location.
+{{% notice warning %}}
+Server functionality is still in beta, use with caution
+{{% /notice %}}
