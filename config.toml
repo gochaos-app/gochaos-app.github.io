@@ -1,7 +1,7 @@
-baseURL = "http://example.org/"
+baseURL = "https://gochaos-app.github.io/"
 theme="hugo-theme-learn"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Go-Chaos"
 
 [params]
 themeVariant = "green"
@@ -13,7 +13,3 @@ home = ["HTML","RSS","JSON"]
 [Clear-History]
 other = "Clear History"
 
-[deployment]
-  [[deployment.targets]]
-    name = "default"
-    URL = "s3://chaosctl.ramonesparza.net?region=us-east-1"
