@@ -82,6 +82,5 @@ go-chaos d inventory/inventory_prod.hcl
 ```
 
 {{% notice warning %}}
-Be really careful on which chaos experiments get executed, actions cannot be undone
-the go-chaos server is still in development.
+Be really careful on which chaos experiments get executed, actions cannot be undone - go-chaos server is still in development.
 {{% /notice %}}
