@@ -6,6 +6,9 @@ title = "Go-Chaos"
 [params]
 themeVariant = "green"
 showVisitedLinks = true
+disableBreadcrumb = false
+disableNextPrev = false
+disableLandingPageButton = false
 
 [outputs]
 home = ["HTML","RSS","JSON"]
