@@ -81,5 +81,7 @@ this last curl command is equivalent to:
 go-chaos d inventory/inventory_prod.hcl
 ```
 
-*** Note *** Be really careful on which chaos experiments get executed, actions cannot be undone
+{{% notice warning %}}
+Be really careful on which chaos experiments get executed, actions cannot be undone
 the go-chaos server is still in development.
+{{% /notice %}}
