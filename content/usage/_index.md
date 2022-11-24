@@ -10,3 +10,5 @@ The following examples and configuration are for guidance on how to create chaos
 
 * [aws](aws) - Simple example on which instances and a lambda function are stopped and sending a slack message with a bash script.
 * [kubernetes](k8s) A single file that executes chaos for K8s.
+
+These and more examples can be found at [go-chaos-experiments](https://github.com/gochaos-app/go-chaos-experiments)
