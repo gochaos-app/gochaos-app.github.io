@@ -1,7 +1,7 @@
 ---
 date: 2016-04-09T16:50:16+02:00
 title: Server configuration 
-pre: "<b>4. </b>"
+pre: "<b>5. </b>"
 weight: 50
 ---
 {{% notice warning %}}

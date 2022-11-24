@@ -53,5 +53,10 @@ go-chaos d experiment.hcl
 This last experiment will terminate 6 EC2 instances with the tag *Name:prod-web-server* in region *us-east-1*
 
 ## Contribute
-***go-chaos*** is written in Go, more features (and bugfixes) are in development, if you want a feature or contribute with code, please send and email or make a MR.
 
+***Go-Chaos*** is written in Go, more features (and bugfixes) are in development, if you want a feature or contribute with code, please make a ***[Pull Request](https://github.com/gochaos-app/go-chaos)***.
+
+
+{{% button href="https://github.com/gochaos-app/go-chaos-experiments" %}}go-chaos experiments{{% /button %}}
+
+{{% button href="https://github.com/gochaos-app/gochaos-app.github.io" %}}This documentation{{% /button %}}
