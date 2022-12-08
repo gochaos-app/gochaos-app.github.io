@@ -24,7 +24,7 @@ The server configuration file is a toml key value format. A simple config file w
 
 ```toml
 port = "3333" 
-remote = "git@github.com:mental12345/go-chaos-experiments.git" 
+remote = "git@github.com:gochaos-app/go-chaos-experiments.git" 
 branch = "refs/heads/main" 
 path = "/tmp/test" 
 ```
