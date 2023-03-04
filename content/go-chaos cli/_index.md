@@ -9,7 +9,7 @@ go-chaos is a terminal app, so you will need to have basic knowledge on Linux or
 
 ```bash
 NAME:
-   go-chaos - A terminal based app that injects chaos into your cloud infrastrucure
+   go-chaos - A terminal based app that injects chaos into your cloud infrastructure
 
 USAGE:
    go-chaos command [command options]
@@ -19,7 +19,6 @@ COMMANDS:
    plan      Execute a dry run with custom file name
    validate  Validate chaos file
    target    Execute chaos on a single target
-   server    Start go-chaos server
    help, h   Shows a list of commands or help for one command
 
 ```

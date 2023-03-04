@@ -30,7 +30,7 @@ Download the compatible binary. Current executable files built are for the
 {{< /tabs >}}
 
 
-All arquitectures have versions for both *amd64*  and *arm64*
+All architectures have versions for both *amd64*  and *arm64*
 
 Compile from source:
 

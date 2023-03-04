@@ -30,4 +30,4 @@ it can run any script.
 ### Chaos config.
 * tag: Single tag to find resources (for both k8s and cloud providers). 
 * chaos: Parameter that performs a specific action on resources found, depends on resource. 
-* count: Integer that defines the number of resources to apply the chaos paramenter mentioned above. 
+* count: Integer that defines the number of resources to apply the chaos parameter mentioned above. 

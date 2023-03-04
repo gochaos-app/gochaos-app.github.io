@@ -5,7 +5,7 @@ title: AWS
 
 ## Environment
 In this theoretical environment, the team has the Login service running inside AWS EC2 instances. 
-A lambda function gets called to obtain the device resolution, will apply chaos on taht as well.
+A lambda function gets called to obtain the device resolution, will apply chaos on that as well.
 
 ## Experiment
 

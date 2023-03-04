@@ -6,7 +6,7 @@ weight: 20
 ---
 go-chaos uses HCL for the configuration language. 
 
-### Why HCL was choosen 
+### Why HCL was chosen 
 
 * Unlike other formats, HCL is easily readable by machines and people. 
 * It doesn't have such problems with indenting like yaml does. 

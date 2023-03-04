@@ -5,7 +5,7 @@ title: K8s
 
 ## Environment
 
-In the next theorical environment, we have a inventory app that is running on k8s, the hypothesis is that our customers are able to get products with no problem even if our app gets scale down or up.
+In the next environment, we have a inventory app that is running on k8s, the hypothesis is that our customers are able to get products with no problem even if our app gets scale down or up.
 
 ## Experiment
 

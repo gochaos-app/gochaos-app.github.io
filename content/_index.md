@@ -12,7 +12,7 @@ Go-Chaos is a cli app to make chaos engineering simple with experiments as code.
 * Limit blast radius with the help of tags.
 * Both data deletion and server-shutdown perturbation models. 
 
-## Suported Services
+## Supported Services
 Go-chaos support the experimentation on the following providers:
 * AWS
 * GCP
