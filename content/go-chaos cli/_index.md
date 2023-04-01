@@ -24,7 +24,7 @@ COMMANDS:
 ```
 
 Basic commands are:
- * ***validate***: reads a file and checks if the file is readeable. Finds issues such as missing values for parameters. 
+ * ***validate***: reads a file and checks if the file is readable. Finds issues such as missing values for parameters. 
  ```bash
 go-chaos validate myExperiment.hcl 
 ```
@@ -48,7 +48,3 @@ go-chaos destroy myExperiment.hcl
  go-chaos target myExperiment.hcl aws.ec2.app1:prod
 ```
 
-* ***server***: reads a server configuration toml file, start a server and can execute chaos experiments from a remote location.
-{{% notice warning %}}
-Server functionality is still in beta, use with caution
-{{% /notice %}}

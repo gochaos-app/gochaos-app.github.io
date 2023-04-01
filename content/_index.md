@@ -18,11 +18,13 @@ Go-chaos support the experimentation on the following providers:
 * GCP
 * DigitalOcean
 * Kubernetes
+* custom modules (pre-release feature)
 
 ## Go-Chaos workflow
 
 - write
 - validate
+- plan
 - destroy
 
 Start by creating a directory
@@ -47,7 +49,7 @@ job "aws" "ec2" {
 
 Execute the experiment:
 ```bash
-go-chaos d experiment.hcl
+go-chaos destroy experiment.hcl
 ```
 
 This last experiment will terminate 6 EC2 instances with the tag *Name:prod-web-server* in region *us-east-1*

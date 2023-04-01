@@ -32,12 +32,24 @@ go-chaos can execute a script at the end of the experiment, this lets you create
 custom alerts, execute custom steps after the chaos experiment, or simple make an
 announcement that a chaos engineering experiment took place.
 
-## Simple server to start chaos experiments.
-go-chaos can act as a simple server. When this mode is enabled, go chaos gets its server configuration from file called server.toml 
-```hcl
-go-chaos s server.toml
+## Develop your own custom modules (pre-release feature)
+go-chaos can accept modules and executes those as part of the chaos jobs in the file. The modules 
+should contain the following code: 
+
 ```
-Please see documentation on how to setup the server.
-    
+package main
+
+import (
+  ...
+)
+
+
+func ChaosFunc(region string, service string, project string, namespace string, tag string, chaos string, number int) {
+  ...
+}
+```
+
+This function is the entrypoint of the module, needs to have those arguments which correspond to the structure of the job chaos. 
+You can use these arguments with any purpose according to the custom specification.
 
 
