@@ -14,7 +14,7 @@ Go-Chaos es una aplicación de línea de comandos (cli) para hacer que la ingeni
 * Limita el alcance del impacto con la ayuda de etiquetas.
 * Modelos de perturbación tanto de eliminación de datos como de apagado de servidores.
 
-## Supported Services
+## Servicios 
 Go-Chaos admite la experimentación en los siguientes proveedores:
 
 * AWS
@@ -23,7 +23,7 @@ Go-Chaos admite la experimentación en los siguientes proveedores:
 * Kubernetes
 
 
-## Go-Chaos workflow
+## Flujo de trabajo
 
 - escribir
 - validar
