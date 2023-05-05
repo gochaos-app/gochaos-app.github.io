@@ -6,7 +6,7 @@ title: AWS
 ## Situación
 En esta situación teórica, se tiene el servicio de inicio de sesión (Login) ejecutándose dentro de instancias AWS EC2. Se llama a una función lambda para obtener la resolución del dispositivo, en la cual se aplicará caos también.
 
-## Experiment
+## Experimento
 
 Start by creating a new chaos experiment file called `config.hcl` 
 copy-paste the following code:
