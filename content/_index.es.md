@@ -7,10 +7,6 @@ weight: 5
 # Go-Chaos
 Go-Chaos es una aplicación de línea de comandos (cli) para hacer que la ingeniería del caos sea simple mediante experimentos como código.
 
-## Main Features
-* Leer experimentos de ingenería de caos en formato HCL.
-* Limita el radio de ejecución con ayuda de etiquetas.
-* Ambos, destrucción de datos y apagado de servidores como modelos de ingeniería. 
 
 ## Características principales
 
