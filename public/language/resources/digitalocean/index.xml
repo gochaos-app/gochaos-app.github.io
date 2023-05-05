@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Do Setup on Go-Chaos</title>
+    <link>https://gochaos-app.github.io/language/resources/digitalocean/</link>
+    <description>Recent content in Do Setup on Go-Chaos</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 09 Apr 2016 16:50:16 +0200</lastBuildDate><atom:link href="https://gochaos-app.github.io/language/resources/digitalocean/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DigitalOcean Droplets</title>
+      <link>https://gochaos-app.github.io/language/resources/digitalocean/droplets/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://gochaos-app.github.io/language/resources/digitalocean/droplets/</guid>
+      <description>Compute Droplets job &amp;#34;do&amp;#34; &amp;#34;droplet&amp;#34; { config { tag = &amp;#34;env:prod&amp;#34; chaos = &amp;#34;terminate&amp;#34; count = 1 } } chaos config:
+ terminate: Finds droplets with specified tag and destroys them. reboot: Finds droplets with specified tag and reboots the instances. stop: Tries to shutdown gracefully the found droplets. poweroff: PowerOffs found droplets with tag.  </description>
+    </item>
+    
+    <item>
+      <title>DigitalOcean Load Balancer</title>
+      <link>https://gochaos-app.github.io/language/resources/digitalocean/load_balancer/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://gochaos-app.github.io/language/resources/digitalocean/load_balancer/</guid>
+      <description>Load Balancer job &amp;#34;do&amp;#34; &amp;#34;load_balancer&amp;#34; { config { tag = &amp;#34;app&amp;#34; chaos = &amp;#34;removeDroplets&amp;#34; count = 1 } } chaos config:
+ removeDroplets: Finds a load balancer with tag and removes droplets from it. removeRules: Finds a load balancer with tag and removes rules from it.  </description>
+    </item>
+    
+  </channel>
+</rss>

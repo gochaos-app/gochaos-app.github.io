@@ -1,6 +1,7 @@
 baseURL = "https://gochaos-app.github.io"
 theme="hugo-theme-learn"
 languageCode = "en-us"
+defaultContentLanguage = "en"
 title = "Go-Chaos"
 
 [params]
@@ -16,3 +17,18 @@ home = ["HTML","RSS","JSON"]
 [Clear-History]
 other = "Clear History"
 
+[Languages]
+[Languages.en]
+title = "Go-Chaos"
+weight = 1
+languageName = "English"
+landingPageURL = "/en"
+landingPageName = "<i class='fas fa-home'></i> Home"
+
+
+[Languages.es]
+title = "Documentation for Hugo Learn Theme"
+weight = 2
+languageName = "Español"
+landingPageURL = "/es"
+landingPageName = "<i class='fas fa-home'></i> Inicio"

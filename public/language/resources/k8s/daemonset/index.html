@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" type="image/png" href="/images/gopher.png">
+    <title>Kubernetes daemonsets :: Go-Chaos</title>
+
+    
+    <link href="/css/nucleus.css?1680322561" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1680322561" rel="stylesheet">
+    <link href="/css/hybrid.css?1680322561" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1680322561" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1680322561" rel="stylesheet">
+    <link href="/css/auto-complete.css?1680322561" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1680322561" rel="stylesheet">
+    <link href="/css/theme.css?1680322561" rel="stylesheet">
+    <link href="/css/tabs.css?1680322561" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1680322561" rel="stylesheet">
+    
+    <link href="/css/theme-green.css?1680322561" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1680322561"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/language/resources/k8s/daemonset/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <svg xmlns="http://www.w3.org/2000/svg"  style="width:100%; height:100%;" viewBox="0 0 1920 2000" preserveAspectRatio="xMidYMid" fill-rule="evenodd" stroke-width="28.222" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" xmlns:ooo="http://xml.openoffice.org/svg/export" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:presentation="http://sun.com/xmlns/staroffice/presentation" xmlns:smil="http://www.w3.org/2001/SMIL20/" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xml:space="preserve">
+    <defs>
+      <style>
+        .cls-1 {
+          fill: none;
+          stroke: #000;
+          stroke-width: 10px;
+        }
+  
+        .cls-1, .cls-2 {
+          fill-rule: evenodd;
+        }
+      </style>
+    </defs>
+    <path class="cls-1" d="M442.816,141C611.443,259.56,793.82,612.9,892.58,913.277c100.74,306.393,133.58,607.573,41.91,685.813C814.081,1701.85,537.068,1353.77,363.6,860.216,182.684,345.483,226.307-11.233,442.816,141Z"/>
+    <path id="Ellipse_1_copy" data-name="Ellipse 1 copy" class="cls-1" d="M598.172,569.914C648.883,605.57,703.728,711.829,733.428,802.16c30.295,92.141,40.171,182.713,12.6,206.24-36.21,30.91-119.515-73.772-171.682-222.2C519.944,631.409,533.062,524.135,598.172,569.914Z"/>
+    <path id="Ellipse_1_copy_2" data-name="Ellipse 1 copy 2" class="cls-1" d="M499.286,325.87c114.737,80.673,238.829,321.092,306.027,525.472,68.545,208.478,90.889,413.4,28.516,466.638C751.9,1387.9,563.417,1151.06,445.385,815.238,322.289,465.006,351.971,222.291,499.286,325.87Z"/>
+    <path id="Ellipse_1_copy_4" data-name="Ellipse 1 copy 4" class="cls-1" d="M1422.23,326.078c-114.75,80.636-238.86,320.945-306.07,525.232-68.55,208.38-90.9,413.21-28.52,466.42,81.94,69.89,270.45-166.84,388.5-502.507C1599.25,465.15,1569.56,222.546,1422.23,326.078Z"/>
+    <path class="cls-1" d="M1210,1007c-50.26,26.66-131.04,42.35-185.81,25.5-31.917-9.81-60.545-27.12-82.19-49.5-8.286-8.568-19.949-24.5-30-41a379.357,379.357,0,0,1-28-56"/>
+    <path id="Shape_2_copy" data-name="Shape 2 copy" class="cls-1" d="M696,997c5.4,4.66,12.066,7.99,18,12,56.14,37.91,127.174,41.09,182.2,23.5,34.813-11.12,62.142-28.77,82.19-49.5,8.286-8.568,19.948-24.5,30-41a379.357,379.357,0,0,0,28-56"/>
+    <path id="Ellipse_1_copy_3" data-name="Ellipse 1 copy 3" class="cls-1" d="M1477.18,140.451c-168.62,118.564-351,471.906-449.76,772.282-100.74,306.4-133.58,607.567-41.91,685.807,120.41,102.77,397.42-245.31,570.89-738.869C1737.32,344.938,1693.69-11.778,1477.18,140.451Z"/>
+    <path id="Ellipse_1_copy_5" data-name="Ellipse 1 copy 5" class="cls-1" d="M1477.18,140.451c-168.62,118.564-351,471.906-449.76,772.282-100.74,306.4-133.58,607.567-41.91,685.807,120.41,102.77,397.42-245.31,570.89-738.869C1737.32,344.938,1693.69-11.778,1477.18,140.451Z"/>
+    <path id="Ellipse_1_copy_3-2" data-name="Ellipse 1 copy 3" class="cls-1" d="M1321.83,569.37c-50.71,35.655-105.56,141.914-135.26,232.245-30.29,92.141-40.17,182.713-12.6,206.245,36.21,30.9,119.51-73.777,171.68-222.2C1400.06,630.864,1386.94,523.59,1321.83,569.37Z"/>
+    <path id="Go-Chaos" class="cls-2" d="M457.673,1859.83a93.8,93.8,0,0,1-9.644,1.4,105.655,105.655,0,0,1-10.62.55q-27.589,0-42.6-14.46t-15.136-43.4q0-14.895,4.882-26.24a54.81,54.81,0,0,1,13.367-19.11A56.633,56.633,0,0,1,418,1746.85a76.547,76.547,0,0,1,24.9-3.96,122.093,122.093,0,0,1,19.592,1.58,134.355,134.355,0,0,1,19.226,4.64v-25.39a101.657,101.657,0,0,0-18.188-4.33,148.923,148.923,0,0,0-23.438-1.77,108.954,108.954,0,0,0-26.062,2.99,91.236,91.236,0,0,0-22.338,8.6,80.638,80.638,0,0,0-18.128,13.55,82.486,82.486,0,0,0-13.489,17.77,84.61,84.61,0,0,0-8.422,21.36,100,100,0,0,0-2.869,24.23,94.714,94.714,0,0,0,5.432,32.78,68.316,68.316,0,0,0,16.357,25.57,74.195,74.195,0,0,0,27.344,16.66q16.418,5.925,38.391,5.92,7.325,0,14.771-.73t14.465-1.89q7.019-1.17,12.695-2.63t9.339-2.8v-82.4H421.052v25.02h36.621v38.21Zm168.554-18.31a35.162,35.162,0,0,1-6.1,12.02,25.935,25.935,0,0,1-9.278,7.33,27.67,27.67,0,0,1-11.84,2.5,28.063,28.063,0,0,1-11.9-2.5,26.309,26.309,0,0,1-9.4-7.33,34.511,34.511,0,0,1-6.164-12.02,63.811,63.811,0,0,1,0-33.2,35.96,35.96,0,0,1,6.1-12.09,25.016,25.016,0,0,1,9.339-7.32,28.353,28.353,0,0,1,11.779-2.44,29.082,29.082,0,0,1,11.963,2.44,24.912,24.912,0,0,1,9.4,7.32,36,36,0,0,1,6.1,12.09A63.783,63.783,0,0,1,626.227,1841.52Zm28.015-41.99a55.557,55.557,0,0,0-11.779-19.66,52.081,52.081,0,0,0-18.738-12.63,66.263,66.263,0,0,0-24.964-4.46,64.758,64.758,0,0,0-24.536,4.46,52.777,52.777,0,0,0-18.737,12.63,55.754,55.754,0,0,0-11.9,19.66,74.15,74.15,0,0,0-4.151,25.39,75.136,75.136,0,0,0,4.09,25.39,55.4,55.4,0,0,0,11.779,19.65,51.96,51.96,0,0,0,18.738,12.64,66.257,66.257,0,0,0,24.964,4.45,64.754,64.754,0,0,0,24.536-4.45,52.692,52.692,0,0,0,18.738-12.64,55.678,55.678,0,0,0,11.9-19.65,74.2,74.2,0,0,0,4.151-25.39A75.185,75.185,0,0,0,654.242,1799.53Zm53.5,36.5h53.833v-26.25H707.746v26.25Zm208.96-91.92a118.3,118.3,0,0,1,18.188,4.27v-25.39a95.567,95.567,0,0,0-16.723-3.97,132.219,132.219,0,0,0-19.654-1.4q-20.264.12-36.316,6.83a74.353,74.353,0,0,0-26.733,18.44,80.617,80.617,0,0,0-16.357,27.71,102.861,102.861,0,0,0-5.677,34.66,99.564,99.564,0,0,0,5.31,33.27,69.5,69.5,0,0,0,15.87,25.88,71.1,71.1,0,0,0,26.306,16.72q15.747,5.925,36.5,5.92a146.7,146.7,0,0,0,20.508-1.4,137.756,137.756,0,0,0,18.432-3.85v-25.75a109.235,109.235,0,0,1-18.066,4.27,126.771,126.771,0,0,1-18.921,1.46,67.164,67.164,0,0,1-23.132-3.72,45.073,45.073,0,0,1-17.273-11.05,48.693,48.693,0,0,1-10.865-18.25,77.288,77.288,0,0,1-3.784-25.33,74.464,74.464,0,0,1,4.151-25.81A53.748,53.748,0,0,1,860,1758.63a48.8,48.8,0,0,1,17.7-11.71,61.3,61.3,0,0,1,22.522-4.03A113.947,113.947,0,0,1,916.706,1744.11Zm101.664-36.87H989.435V1884h28.935v-81.42a43.471,43.471,0,0,1,13.12-11.48,32.951,32.951,0,0,1,15.56-4.02,25.766,25.766,0,0,1,10.87,2.19,15.143,15.143,0,0,1,7.32,7.57,20.972,20.972,0,0,1,1.71,6.04,67.818,67.818,0,0,1,.49,8.98V1884h28.93v-76.05a79.076,79.076,0,0,0-1.1-14.28,39.47,39.47,0,0,0-3.42-10.5,34.816,34.816,0,0,0-6.65-9.28,35.384,35.384,0,0,0-8.79-6.35,42.339,42.339,0,0,0-10.38-3.6,55.834,55.834,0,0,0-11.41-1.16,46.249,46.249,0,0,0-12.51,1.59,45.691,45.691,0,0,0-10.13,4.09,43.638,43.638,0,0,0-8.18,5.92,50.149,50.149,0,0,0-6.29,6.84h-0.49a105.734,105.734,0,0,0,1.04-10.68q0.3-5.925.31-15.08v-48.22ZM1223.91,1884h26.12q-0.24-6.585-.49-15.01t-0.24-20.15v-44.55a41.454,41.454,0,0,0-3.24-16.48,35.147,35.147,0,0,0-9.76-13.12,47.581,47.581,0,0,0-16.24-8.73,72.832,72.832,0,0,0-22.64-3.18,110.158,110.158,0,0,0-21,2.2,95.779,95.779,0,0,0-18.92,5.98v22.59a137.515,137.515,0,0,1,19.04-5.86,80.967,80.967,0,0,1,17.58-1.96,36.881,36.881,0,0,1,12.21,1.77,22.291,22.291,0,0,1,8.12,4.76,17.991,17.991,0,0,1,4.51,6.84,23.041,23.041,0,0,1,1.41,8v4.76a97.964,97.964,0,0,0-11.35-2.32,95.415,95.415,0,0,0-14.16-.98,63.279,63.279,0,0,0-19.17,2.75,42.837,42.837,0,0,0-14.89,7.99,36.54,36.54,0,0,0-9.71,12.82,40.46,40.46,0,0,0-3.48,17.09,39.719,39.719,0,0,0,2.99,15.69,35.211,35.211,0,0,0,8.24,11.96,35.656,35.656,0,0,0,12.58,7.57,46.3,46.3,0,0,0,15.74,2.62,44.187,44.187,0,0,0,11.6-1.46,45.733,45.733,0,0,0,9.77-3.85,55.221,55.221,0,0,0,13.67-10.31h0.49Zm-3.54-32.35a40.17,40.17,0,0,1-4.46,4.27,34.533,34.533,0,0,1-5.92,3.97,38.048,38.048,0,0,1-7.2,2.93,28.807,28.807,0,0,1-8.3,1.16,22.364,22.364,0,0,1-6.71-.98,15.994,15.994,0,0,1-5.56-2.93,13.756,13.756,0,0,1-3.78-4.94,16.286,16.286,0,0,1-1.41-7.02q0-8.67,6.17-12.88t16.78-4.21a75.7,75.7,0,0,1,10.87.79c3.58,0.54,6.75,1.12,9.52,1.77v18.07Zm167.09-10.13a35.135,35.135,0,0,1-6.11,12.02,25.866,25.866,0,0,1-9.27,7.33,27.7,27.7,0,0,1-11.84,2.5,28.083,28.083,0,0,1-11.91-2.5,26.378,26.378,0,0,1-9.4-7.33,34.676,34.676,0,0,1-6.16-12.02,63.727,63.727,0,0,1,0-33.2,36.14,36.14,0,0,1,6.1-12.09,25.082,25.082,0,0,1,9.34-7.32,28.364,28.364,0,0,1,11.78-2.44,29.071,29.071,0,0,1,11.96,2.44,24.805,24.805,0,0,1,9.4,7.32,35.968,35.968,0,0,1,6.11,12.09A63.727,63.727,0,0,1,1387.46,1841.52Zm28.01-41.99a55.414,55.414,0,0,0-11.78-19.66,52.023,52.023,0,0,0-18.73-12.63,66.3,66.3,0,0,0-24.97-4.46,64.72,64.72,0,0,0-24.53,4.46,52.763,52.763,0,0,0-18.74,12.63,55.663,55.663,0,0,0-11.9,19.66,74.1,74.1,0,0,0-4.15,25.39,75.086,75.086,0,0,0,4.09,25.39,55.407,55.407,0,0,0,11.77,19.65,52.045,52.045,0,0,0,18.74,12.64,66.3,66.3,0,0,0,24.97,4.45,64.719,64.719,0,0,0,24.53-4.45,52.656,52.656,0,0,0,18.74-12.64,55.676,55.676,0,0,0,11.9-19.65,74.1,74.1,0,0,0,4.15-25.39A75.086,75.086,0,0,0,1415.47,1799.53Zm105.14,56.45a14.767,14.767,0,0,1-5.31,4.34,28.016,28.016,0,0,1-7.99,2.5,59.409,59.409,0,0,1-10.01.79,95.288,95.288,0,0,1-15.02-1.28,92.467,92.467,0,0,1-17.58-4.82v23.32a67.406,67.406,0,0,0,14.84,4.45,104.8,104.8,0,0,0,20.2,1.77,85.081,85.081,0,0,0,20.81-2.38,46.641,46.641,0,0,0,16.24-7.32,34.676,34.676,0,0,0,10.56-12.39,38.135,38.135,0,0,0,3.78-17.46q0-9.15-3.11-15.07a28.792,28.792,0,0,0-8-9.65,38.467,38.467,0,0,0-10.99-5.8q-6.1-2.07-12.2-3.54l-8.06-2.01a54.2,54.2,0,0,1-7.93-2.63,14.973,14.973,0,0,1-5.92-4.15,9.892,9.892,0,0,1-2.14-6.59,10.45,10.45,0,0,1,.98-4.45,9.909,9.909,0,0,1,3.17-3.79,17.091,17.091,0,0,1,5.74-2.62,33.056,33.056,0,0,1,8.66-.98,70.173,70.173,0,0,1,8.55.55q4.515,0.555,9.09,1.4,4.59,0.87,9.04,2.02c2.97,0.77,5.8,1.61,8.48,2.5v-23.56a107.811,107.811,0,0,0-17.21-4.58,112.429,112.429,0,0,0-20.39-1.77,60.581,60.581,0,0,0-16.9,2.32,40.926,40.926,0,0,0-14.04,7.08,34.116,34.116,0,0,0-9.58,12.03,38.612,38.612,0,0,0-3.54,17.15,31.706,31.706,0,0,0,2.62,13.61,26.371,26.371,0,0,0,7.08,9.22,37.244,37.244,0,0,0,10.32,5.92,123.5,123.5,0,0,0,12.2,3.96q5.01,1.23,9.59,2.44a49.9,49.9,0,0,1,8.11,2.87,17.057,17.057,0,0,1,5.68,4.09,9.153,9.153,0,0,1,2.14,6.23A10.215,10.215,0,0,1,1520.61,1855.98Z"/>
+  </svg>
+  
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1680322561"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1680322561"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/gochaos-app.github.io";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1680322561"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/basics/" title="Overview" class="dd-item
+        
+        
+        
+        ">
+      <a href="/basics/">
+          <b>1. </b>Overview
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/basics/introduction/" title="Introduction" class="dd-item
+        
+        
+        
+        ">
+      <a href="/basics/introduction/">
+          Introduction
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/basics/installation/" title="Installation" class="dd-item
+        
+        
+        
+        ">
+      <a href="/basics/installation/">
+          Installation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/basics/features/" title="Features" class="dd-item
+        
+        
+        
+        ">
+      <a href="/basics/features/">
+          Features
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/" title="Configuration language" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/language/">
+          <b>2. </b>Configuration language
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/job_basics/" title="Usage" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/job_basics/">
+          Usage
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/resources/" title="Resources" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/language/resources/">
+          Resources
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/resources/aws/" title="AWS Setup" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/resources/aws/">
+          AWS Setup
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/language/resources/aws/autoscaler/" title="AWS Autoscaler" class="dd-item ">
+        <a href="/language/resources/aws/autoscaler/">
+        AWS Autoscaler
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/language/resources/aws/instance/" title="AWS EC2 instances" class="dd-item ">
+        <a href="/language/resources/aws/instance/">
+        AWS EC2 instances
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/language/resources/aws/lambdafn/" title="AWS Lambda Functions" class="dd-item ">
+        <a href="/language/resources/aws/lambdafn/">
+        AWS Lambda Functions
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/language/resources/aws/s3/" title="AWS S3" class="dd-item ">
+        <a href="/language/resources/aws/s3/">
+        AWS S3
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/resources/digitalocean/" title="Do Setup" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/resources/digitalocean/">
+          Do Setup
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/language/resources/digitalocean/droplets/" title="DigitalOcean Droplets" class="dd-item ">
+        <a href="/language/resources/digitalocean/droplets/">
+        DigitalOcean Droplets
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/language/resources/digitalocean/load_balancer/" title="DigitalOcean Load Balancer" class="dd-item ">
+        <a href="/language/resources/digitalocean/load_balancer/">
+        DigitalOcean Load Balancer
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/resources/gcp/" title="GCP Setup" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/resources/gcp/">
+          GCP Setup
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/language/resources/gcp/vms/" title="GCP VMs instances" class="dd-item ">
+        <a href="/language/resources/gcp/vms/">
+        GCP VMs instances
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/resources/k8s/" title="K8s Setup" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/language/resources/k8s/">
+          K8s Setup
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/language/resources/k8s/pods/" title="Kubernetes pods" class="dd-item ">
+        <a href="/language/resources/k8s/pods/">
+        Kubernetes pods
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/language/resources/k8s/deployment/" title="Kubernetes deployment" class="dd-item ">
+        <a href="/language/resources/k8s/deployment/">
+        Kubernetes deployment
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/language/resources/k8s/daemonset/" title="Kubernetes daemonsets" class="dd-item active">
+        <a href="/language/resources/k8s/daemonset/">
+        Kubernetes daemonsets
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/language/notifications/" title="Notifications" class="dd-item
+        
+        
+        
+        ">
+      <a href="/language/notifications/">
+          Notifications
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/go-chaos-cli/" title="CLI" class="dd-item
+        
+        
+        
+        ">
+      <a href="/go-chaos-cli/">
+          <b>3. </b>CLI
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/usage/" title="Usage" class="dd-item
+        
+        
+        
+        ">
+      <a href="/usage/">
+          <b>4. </b>Usage
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/usage/aws/" title="AWS" class="dd-item ">
+        <a href="/usage/aws/">
+        AWS
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/usage/k8s/" title="K8s" class="dd-item ">
+        <a href="/usage/k8s/">
+        K8s
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Go-Chaos</a> > <a href='/language/'>Configuration language</a> > <a href='/language/resources/'>Resources</a> > <a href='/language/resources/k8s/'>K8s Setup</a> > Kubernetes daemonsets
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Kubernetes daemonsets
+            </h1>
+          
+
+        
+
+
+<h4 id="compute-deployments">Compute deployments</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HCL" data-lang="HCL"><span style="color:#66d9ef">job</span> <span style="color:#e6db74">&#34;kubernetes&#34; &#34;daemonSet&#34;</span> {
+    namespace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>
+     <span style="color:#66d9ef">config</span> {
+        tag <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;k8s-app:fluentd-logging&#34;</span>
+        count <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+        chaos <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;terminate&#34;</span>
+    }
+}
+</code></pre></div><p>chaos config:</p>
+<ul>
+<li><em>terminate</em>: Finds daemonSet with specified label and terminates those found.</li>
+</ul>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/language/resources/k8s/deployment/" title="Kubernetes deployment"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/language/notifications/" title="Notifications" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1680322561"></script>
+    <script src="/js/perfect-scrollbar.min.js?1680322561"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1680322561"></script>
+    <script src="/js/jquery.sticky.js?1680322561"></script>
+    <script src="/js/featherlight.min.js?1680322561"></script>
+    <script src="/js/highlight.pack.js?1680322561"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1680322561"></script>
+    <script src="/js/learn.js?1680322561"></script>
+    <script src="/js/hugo-learn.js?1680322561"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1680322561"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>K8s Setup on Go-Chaos</title>
+    <link>https://gochaos-app.github.io/language/resources/k8s/</link>
+    <description>Recent content in K8s Setup on Go-Chaos</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 09 Apr 2016 16:50:16 +0200</lastBuildDate><atom:link href="https://gochaos-app.github.io/language/resources/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes pods</title>
+      <link>https://gochaos-app.github.io/language/resources/k8s/pods/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://gochaos-app.github.io/language/resources/k8s/pods/</guid>
+      <description>Compute pods job &amp;#34;kubernetes&amp;#34; &amp;#34;pod&amp;#34; { namespace = &amp;#34;default&amp;#34; config { tag = &amp;#34;app:nginx&amp;#34; count = 1 chaos = &amp;#34;terminate&amp;#34; } } chaos config:
+ terminate: Finds pods with specified label and terminates them, one by one. terminateAll: Terminates entire collection of pods at the same time. Parameter count will be ignored in this operation, unless is 0, which will skip the job. Be careful with this configuration.  ^^ terminateAll This needs to change, terminateAll should delete at the same time every pod found not entire collection, deletecolletion was easier to implement, and make count boolean, either 0 or 1, however cannot ignore parameters like that.</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes deployment</title>
+      <link>https://gochaos-app.github.io/language/resources/k8s/deployment/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://gochaos-app.github.io/language/resources/k8s/deployment/</guid>
+      <description>Compute deployments job &amp;#34;kubernetes&amp;#34; &amp;#34;deployment&amp;#34; { namespace = &amp;#34;nginx&amp;#34; config { tag = &amp;#34;app:nginx&amp;#34; count = 1 chaos = &amp;#34;terminate&amp;#34; } } chaos config:
+ terminate: Finds deployments with specified label and terminates them, one by one. update: Finds a single deployment and updates the number of replicas to the count parament.  </description>
+    </item>
+    
+    <item>
+      <title>Kubernetes daemonsets</title>
+      <link>https://gochaos-app.github.io/language/resources/k8s/daemonset/</link>
+      <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
+      
+      <guid>https://gochaos-app.github.io/language/resources/k8s/daemonset/</guid>
+      <description>Compute deployments job &amp;#34;kubernetes&amp;#34; &amp;#34;daemonSet&amp;#34; { namespace = &amp;#34;default&amp;#34; config { tag = &amp;#34;k8s-app:fluentd-logging&amp;#34; count = 1 chaos = &amp;#34;terminate&amp;#34; } } chaos config:
+ terminate: Finds daemonSet with specified label and terminates those found.  </description>
+    </item>
+    
+  </channel>
+</rss>
