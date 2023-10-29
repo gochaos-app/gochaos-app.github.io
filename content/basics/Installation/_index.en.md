@@ -6,7 +6,7 @@ weight: 30
 
 go-chaos is really simple to install, simply download the binary and place it in the path on your system. 
 
-[Latest release](https://github.com/gochaos-app/go-chaos/releases/tag/v0.2.0)
+[Latest release](https://github.com/gochaos-app/go-chaos/releases/tag/v0.6.0)
 
 
 Download the compatible binary. Current executable files built are for the
@@ -14,18 +14,18 @@ Download the compatible binary. Current executable files built are for the
 {{< tabs groupID="Download">}}
 {{% tab name="Linux" %}}
   
-  [Linux x64](https://github.com/gochaos-app/go-chaos/releases/download/v0.2.0/go-chaos-linux-amd64) 
+  [Linux x64](https://github.com/gochaos-app/go-chaos/releases/download/v0.6.0/go-chaos-linux-amd64) 
   
-  [Linux arm64](https://github.com/gochaos-app/go-chaos/releases/download/v0.2.0/go-chaos-linux-arm64) 
+  [Linux arm64](https://github.com/gochaos-app/go-chaos/releases/download/v0.6.0/go-chaos-linux-arm64) 
 
 {{% /tab %}}
 {{% tab name="FreeBSD" %}}
-  [FreeBSD x64](https://github.com/gochaos-app/go-chaos/releases/download/v0.2.0/go-chaos-freebsd-amd64)
+  [FreeBSD x64](https://github.com/gochaos-app/go-chaos/releases/download/v0.6.0/go-chaos-freebsd-amd64)
 {{% /tab %}}
 {{% tab name="MacOS" %}}
-  [macos x64](https://github.com/gochaos-app/go-chaos/releases/download/v0.2.0/go-chaos-darwin-amd64) 
+  [macos x64](https://github.com/gochaos-app/go-chaos/releases/download/v0.6.0/go-chaos-darwin-amd64) 
   
-  [macos m1](https://github.com/gochaos-app/go-chaos/releases/download/v0.2.0/go-chaos-darwin-m1)
+  [macos m1](https://github.com/gochaos-app/go-chaos/releases/download/v0.6.0/go-chaos-darwin-m1)
 {{% /tab %}}
 {{< /tabs >}}
 

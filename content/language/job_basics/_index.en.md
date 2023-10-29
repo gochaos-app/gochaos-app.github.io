@@ -8,19 +8,6 @@ weight: 10
 
 go-chaos has different parameters to control the chaos experiments executed in the infrastructure. 
 
-## Scripts config.
-```
-script {
-    executor   = "bash"
-    source     = "destroy.sh"
-}
-```
-Only one script is permitted for chaos config file, and the script will always be executed after all jobs have finished
-
-* executor: executable file which will execute the script. As long as the local system has the binary 
-it can run any script. 
-* source: name of the script, it has to be located in the directory where go-chaos is run.
-
 ## Job config.
 
 * region:    Find resources in specific region, exclusive to cloud providers such as aws, gcp (Optional). 
@@ -31,3 +18,31 @@ it can run any script.
 * tag: Single tag to find resources (for both k8s and cloud providers). 
 * chaos: Parameter that performs a specific action on resources found, depends on resource. 
 * count: Integer that defines the number of resources to apply the chaos parameter mentioned above. 
+
+## Script config. 
+The same parameters can be passed to scripts as part. 
+```
+job "script" "python3:script.py" {
+    region = "us-west-2"
+    namespace = "default"
+    project = "project1
+    config {
+        tag = "myapp" 
+        chaos = "terminate"    
+        count = 3
+    }
+}
+```
+In this example a `python3` script called `script.py` will be executed by go-chaos, the parameters are available as environment variablers in the session. The executable `python3` needs to be available in system `$PATH`. 
+
+```
+{
+    "REGION" : region,
+    "PROJECT" : project,
+    "NAMESPACE" : namespace, 
+    "TAG" : tag,
+    "CHAOS" : chaos,
+    "NUMBER": number
+}
+
+```

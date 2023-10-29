@@ -26,7 +26,19 @@ go-chaos no solo destruye recursos, sino que puede realizar una serie de operaci
 
 Esto depende del recurso al que se esté aplicando el caos.
 
-## Ejecución de scripts al final del experimento.
-go-chaos puede ejecutar un script al final del experimento, lo que le permite crear alertas personalizadas, ejecutar pasos personalizados después del experimento de caos o simplemente notificar de que se ha realizado un experimento de ingeniería de caos.
+## Ejecución de scripts.
+go-chaos puede ejecutar scripts como parte del flujo de go-chaos.
+```
+job "script" "python3:script.py" {
+    region = "us-west-2"
+    namespace = "default"
+    project = "project1
+    config {
+        tag = "hello" 
+        chaos = "terminate"    
+        count = 3
+    }
+}
+```
 
 

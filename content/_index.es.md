@@ -21,6 +21,7 @@ Go-Chaos admite la experimentación en los siguientes proveedores:
 * GCP
 * DigitalOcean
 * Kubernetes
+* Scripts personalizados
 
 
 ## Flujo de trabajo

@@ -18,7 +18,7 @@ Go-chaos support the experimentation on the following providers:
 * GCP
 * DigitalOcean
 * Kubernetes
-* custom modules (pre-release feature)
+* custom scripts
 
 ## Go-Chaos workflow
 
